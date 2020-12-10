@@ -21,4 +21,6 @@ Prepared 2 classes for tests:
 - [Logback Classic Module](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic)
 #### Run
 Before running, create a file log/playtech.log in the root directory to record the report.
+For slow machines or internet connections: 
+Increase the values of DELAY_SECONDS and DELAY_MILLIS variables in the test classes.
 
