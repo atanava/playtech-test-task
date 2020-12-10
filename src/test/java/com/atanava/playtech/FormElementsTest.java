@@ -17,6 +17,9 @@ public class FormElementsTest {
     public static WebDriver driver;
     public static FormPage formPage;
 
+    private static final long DELAY_SECONDS = 5;
+    private static final long DELAY_MILLIS = 100;
+
     private final String[] buttons = {OPTION_1_BTN, OPTION_2_BTN, OPTION_3_BTN, OPTION_4_BTN, OPTION_5_BTN, OTHER_OPT_BTN};
 
     @ClassRule
@@ -31,7 +34,7 @@ public class FormElementsTest {
         driver = new ChromeDriver();
         formPage = new FormPage(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(DELAY_SECONDS, TimeUnit.SECONDS);
         driver.get(FORM_PAGE);
     }
 
@@ -47,7 +50,7 @@ public class FormElementsTest {
         for (int i = 0; i < buttons.length; i++) {
             String actualBtn = buttons[i];
             formPage.clickElement(actualBtn);
-            driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().implicitlyWait(DELAY_MILLIS, TimeUnit.MILLISECONDS);
 
             for (int j = 0; j < buttons.length; j++) {
                 if (j == i) {
@@ -65,9 +68,12 @@ public class FormElementsTest {
     public void checkCancelButton() {
         for (int i = 0; i < buttons.length; i++) {
             formPage.clickElement(buttons[i]);
+            driver.manage().timeouts().implicitlyWait(DELAY_MILLIS, TimeUnit.MILLISECONDS);
+
             assertTrue("Radio Button \"Option " + (i+1) + "\" should be selected, but wasn't",
                     formPage.isRadioBtnSelected(buttons[i]));
             formPage.clickElement(OPTION_CANCEL_BTN);
+            driver.manage().timeouts().implicitlyWait(DELAY_MILLIS, TimeUnit.MILLISECONDS);
 
             for (int j = 0; j < buttons.length; j++) {
                 assertFalse("Radio Button \"Option " + (j+1) + "\" should not be selected, but was selected",
