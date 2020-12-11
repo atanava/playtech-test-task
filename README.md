@@ -22,6 +22,8 @@ Created 2 classes for tests:
 #### How To Run
 Use Google Chrome browser.
 Before running, create a file log/playtech.log in the root directory to record the report.
+For slow machines or internet connections: 
+Increase the values of DELAY_SECONDS and DELAY_MILLIS variables in the test classes.
 
 For slow machines or internet connections: 
 Increase the values of DELAY_SECONDS and DELAY_MILLIS variables in the test classes.
