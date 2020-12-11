@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 import static com.atanava.playtech.GoogleFormConfig.*;
-import static com.atanava.playtech.GoogleFormConfig.FORM_PAGE;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 import static com.atanava.playtech.FormTestData.*;
