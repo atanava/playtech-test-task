@@ -1,4 +1,4 @@
-Playtech.com Test Task
+QA Test Task
 ===============================
 #### Task description
 Create automated test for form at https://docs.google.com/forms/d/e/1FAIpQLScVG7idLWR8sxNQygSnLuhehUNVFti0FnVviWCSjDh-JNhsMA/viewform?usp=sf_link
